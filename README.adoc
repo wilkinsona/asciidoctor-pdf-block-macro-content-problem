@@ -1,0 +1,14 @@
+== AsciiDoctor PDF block macro content problem
+
+This repository contains a reproduction of a problem with `asciidoctor-pdf` not including all of
+the content that's produced by a `BlockMacroProcessor` extension.
+
+The problem can be reproduced using `asciidoctor-pdf`:
+
+----
+$ asciidoctor-pdf -r ./extension.rb index.adoc
+----
+
+The resulting PDF will contain the titles of the sections added by the `BlockMacroProcessor` but
+will not contain their content. By constrast, the HTML output produced by `asciidoctor` will
+contain both the titles and the content of the sections.
